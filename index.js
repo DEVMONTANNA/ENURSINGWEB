@@ -83,6 +83,21 @@
 //   console.log(vvv);
 // }
 
+const objectArry = [
+  {
+    name: ["Goodluck", "Montanna", "Chiedozie"],
+    age: [12, 20, 22, 30],
+    hobbies: ["playing", "sleeping", "reading"],
+  },
+  {
+    name: ["f", "c", "d"],
+    age: [12, 20, 22, 30],
+    hobbies: ["playing", "sleeping", "reading"],
+  },
+];
+
+// console.log(objectArry[0].name.slice(0, 1));
+
 const englishQuestions = [
   {
     question: "Which of the following is a correct sentence?",
@@ -207,8 +222,12 @@ englishQuestions.forEach((q, index) => {
   htmlOutputEnglish += `<p>Q${index + 1}: ${q.question}</p>`;
   htmlOutputEnglish += "<ul>";
   q.options.forEach((op) => {
-    htmlOutputEnglish += `<input   class="checker" type ='checkbox'>${op}</input></br> <p class="stater" style="display:none"></p>`;
-    htmlOutputEnglish += `<p class="stater" style="display:none"></p>`;
+    htmlOutputEnglish += `<li style="list-style-type: none">
+    <label>
+    <input class="checker" type="checkbox" value="${op} "> ${op} 
+     </label>
+      <p class="staterv" style="display:none"></p>
+      </li>`;
   });
   htmlOutputEnglish += "</ul>";
 });
@@ -216,28 +235,57 @@ htmlOutputEnglish += `<button style="background-Color:#7fb0f1; color:black; "  o
 htmlOutputEnglish += `<button  style=" background-color:#7fb0f1; float:right; color:black;  " onClick="reloadPage()">Submit</button>`;
 container.innerHTML = htmlOutputEnglish;
 
-const checboxChecker = document.querySelector(".checker");
-const statusss = document.querySelector(".stater");
-
-checboxChecker.addEventListener("change", function () {
-  if (checboxChecker.checked) {
-    document.querySelector(".stater").style.display = "block";
-    let storage = localStorage.setItem("Checkboxstorage", "storage");
-    if (checboxChecker.checked) {
-      storage++;
-    } else {
-      console.log("Error");
+document.querySelectorAll(".checker").forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    const li = this.closest("li");
+    const statP = li?.querySelector(".staterv");
+    // const statP = this.closest("li")?.querySelector(".starterv");
+    if (!statP) {
+      console.warn("starterv not found");
+      return;
     }
-    console.log("Checkbox is checked and value stored");
-    let stiredisplay = localStorage.getItem("Checkedboxstorage", "storage");
-    console.log(stiredisplay);
-
-    statusss.innerHTML = "Checkbox is checked";
-  } else {
-    statusss.style.display = "none";
-  }
-  console.log(statusss);
+    if (this.checked) {
+      statP.innerHTML = "✅ You selected: " + this.value;
+      statP.style.display = "block";
+      if (
+        this.value === englishQuestions[0].answer ||
+        englishQuestions[1].answer ||
+        englishQuestions[2].answer ||
+        englishQuestions[3].answer
+      ) {
+      }
+      alert("You got it very correct");
+    } else {
+      statP.style.display = "none";
+    }
+  });
 });
+// const checboxChecker = document.querySelector(".checker");
+// const statusss = document.querySelector(".stater");
+
+// checboxChecker.addEventListener("change", function () {
+//   if(this.checked){
+//     console.log('yes',  this.value);
+
+//   }
+//   // if (checboxChecker.checked) {
+//   //   document.querySelector(".stater").style.display = "block";
+//   //   let storage = localStorage.setItem("Checkboxstorage", "storage");
+//   //   if (checboxChecker.checked) {
+//   //     storage++;
+//   //   } else {
+//   //     console.log("Error");
+//   //   }
+//   //   console.log("Checkbox is checked and value stored");
+//   //   let stiredisplay = localStorage.getItem("Checkedboxstorage", "storage");
+//   //   console.log(stiredisplay);
+
+//   //   statusss.innerHTML = "Checkbox is checked";
+//   // } else {
+//   //   statusss.style.display = "none";
+//   // }
+//   console.log(statusss);
+// });
 
 // submit reload button function
 function reloadPage() {
