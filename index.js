@@ -211,8 +211,8 @@ foundationOfNursingQuestions.forEach((quest, i) => {
   htmlOutput += "</ul>";
 });
 
-htmlOutput += `<button style="background-color:#7fb0f1; color:black;" onClick="closeSection2()">Back</button>`;
-htmlOutput += `<button style="background-color:#7fb0f1; float:right; color:black;" onClick="reloadPage()">Submit</button>`;
+htmlOutput += `<button style="background-color:#7fb0f1; color:white; border:none " onClick="closeSection2()">Back</button>`;
+htmlOutput += `<button style="background-color:#7fb0f1; float:right; color:white; border:none " onClick="reloadPage()">Submit</button>`;
 
 pharm.innerHTML = htmlOutput;
 
@@ -231,8 +231,8 @@ englishQuestions.forEach((q, index) => {
   });
   htmlOutputEnglish += "</ul>";
 });
-htmlOutputEnglish += `<button style="background-Color:#7fb0f1; color:black; "  onClick="closeSection()">Back</button>`;
-htmlOutputEnglish += `<button  style=" background-color:#7fb0f1; float:right; color:black;  " onClick="reloadPage()">Submit</button>`;
+htmlOutputEnglish += `<button style="background-Color:#7fb0f1; color:white; border:none "   onClick="closeSection()">Back</button>`;
+htmlOutputEnglish += `<button  style=" background-color:#7fb0f1; float:right; color:white; border:none   " onClick="reloadPage()">Submit</button>`;
 container.innerHTML = htmlOutputEnglish;
 
 document.querySelectorAll(".checker").forEach((checkbox) => {
