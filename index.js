@@ -212,7 +212,7 @@ foundationOfNursingQuestions.forEach((quest, i) => {
 });
 
 htmlOutput += `<button style="background-color:#7fb0f1; color:white; border:none " onClick="closeSection2()">Back</button>`;
-htmlOutput += `<button style="background-color:#7fb0f1; float:right; color:white; border:none " onClick="reloadPage()">Submit</button>`;
+htmlOutput += `<button style="background-color:#7fb0f1;  float:right; color:white; border:none " onClick="reloadPage()">Submit</button>`;
 
 pharm.innerHTML = htmlOutput;
 
@@ -331,3 +331,30 @@ function cancelTestCall() {
   let listener = document.querySelector(".FoundationOfNursingContainer");
   listener.style.display = "none";
 }
+
+// immediate loader
+
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    const loadergetter1 = document.querySelector(".loadersection");
+    const loadergetter2 = document.querySelector(".loadertext");
+    const loadergetter3 = document.querySelector(".displaythings");
+
+    if (loadergetter1 && loadergetter2 && loadergetter3) {
+      loadergetter1.style.display = "none";
+      loadergetter2.style.display = "none";
+      loadergetter3.style.display = "block";
+    } else {
+      alert("hh");
+    }
+  }, 3000);
+});
+
+function pageloader() {
+  const loaderpage = document.querySelector(".loaderarea");
+  loaderpage.style.display = "block";
+}
+
+setTimeout(() => {
+  pageloader();
+}, 3000);
