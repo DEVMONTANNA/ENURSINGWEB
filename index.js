@@ -247,14 +247,10 @@ document.querySelectorAll(".checker").forEach((checkbox) => {
     if (this.checked) {
       statP.innerHTML = "✅ You selected: " + this.value;
       statP.style.display = "block";
-      if (
-        this.value === englishQuestions[0].answer ||
-        englishQuestions[1].answer ||
-        englishQuestions[2].answer ||
-        englishQuestions[3].answer
-      ) {
+      if (this.value === englishQuestions[0].answer) {
+        alert("You got it very correct ✅✅✅");
       }
-      alert("You got it very correct");
+      // alert(statP.innerHTML);
     } else {
       statP.style.display = "none";
     }
