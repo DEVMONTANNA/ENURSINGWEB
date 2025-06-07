@@ -70,7 +70,7 @@ body {
   }
   50% {
     transform: scale(2);
-    background-color: #7fb0f1
+    background-color: #7fb0f1;
   }
 }
 
@@ -109,7 +109,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  border: 2px solid hsl(0, 6%, 84%);
+  border: 2px hsl(0, 6%, 84%);
 }
 .subjectNames {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
