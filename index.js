@@ -345,16 +345,16 @@ window.addEventListener("load", function () {
       loadergetter2.style.display = "none";
       loadergetter3.style.display = "block";
     } else {
-      alert("hh");
+      // alert("hh");
     }
   }, 3000);
 });
 
-function pageloader() {
-  const loaderpage = document.querySelector(".loaderarea");
-  loaderpage.style.display = "block";
-}
+// function pageloader() {
+//   const loaderpage = document.querySelector(".loaderarea");
+//   loaderpage.style.display = "block";
+// }
 
-setTimeout(() => {
-  pageloader();
-}, 3000);
+// setTimeout(() => {
+//   pageloader();
+// }, 3000);
