@@ -181,7 +181,6 @@ const englishQuestions = [
   },
 ];
 
-
 const foundationOfNursingQuestions = [
   {
     foundationQuestions: "Who is considered the founder of modern nursing?",
@@ -272,10 +271,13 @@ englishQuestions.forEach((q, index) => {
   htmlOutputEnglish += "</ul>";
 });
 htmlOutputEnglish += `<button style="background-Color:#7fb0f1; color:white; border:none "   onClick="closeSection()">Back</button>`;
-htmlOutputEnglish += `<button  style=" background-color:#7fb0f1; float:right; color:white; border:none   " onClick="reloadPage()">Submit</button>`;
+htmlOutputEnglish += `<button  style=" background-color:#7fb0f1; float:right; color:white; border:none   " onClick="submit()">Submit</button>`;
 container.innerHTML = htmlOutputEnglish;
 
 document.querySelectorAll(".checker").forEach((checkbox) => {
+  if (localStorage.getItem("score") === null) {
+    localStorage.setItem("score", "0");
+  }
   checkbox.addEventListener("change", function () {
     const li = this.closest("li");
     const statP = li?.querySelector(".staterv");
@@ -284,6 +286,7 @@ document.querySelectorAll(".checker").forEach((checkbox) => {
       console.warn("starterv not found");
       return;
     }
+
     if (this.checked) {
       statP.innerHTML = "✅ You selected: " + this.value;
       statP.style.display = "block";
@@ -301,6 +304,13 @@ document.querySelectorAll(".checker").forEach((checkbox) => {
         this.value.trim() === englishQuestions[10].answer.trim()
       ) {
         alert("You got it very correct ✅✅✅");
+        let currentScore = parseInt(localStorage.getItem("score"), 10) || 0;
+        currentScore++;
+        localStorage.setItem("score", currentScore.toString());
+        if (currentScore === 10) {
+          alert("hi its 18");
+        }
+        localStorage.setItem("score", currentScore.toString());
       } else {
         alert("hi");
       }
@@ -310,36 +320,14 @@ document.querySelectorAll(".checker").forEach((checkbox) => {
     }
   });
 });
-// const checboxChecker = document.querySelector(".checker");
-// const statusss = document.querySelector(".stater");
-
-// checboxChecker.addEventListener("change", function () {
-//   if(this.checked){
-//     console.log('yes',  this.value);
-
-//   }
-//   // if (checboxChecker.checked) {
-//   //   document.querySelector(".stater").style.display = "block";
-//   //   let storage = localStorage.setItem("Checkboxstorage", "storage");
-//   //   if (checboxChecker.checked) {
-//   //     storage++;
-//   //   } else {
-//   //     console.log("Error");
-//   //   }
-//   //   console.log("Checkbox is checked and value stored");
-//   //   let stiredisplay = localStorage.getItem("Checkedboxstorage", "storage");
-//   //   console.log(stiredisplay);
-
-//   //   statusss.innerHTML = "Checkbox is checked";
-//   // } else {
-//   //   statusss.style.display = "none";
-//   // }
-//   console.log(statusss);
-// });
 
 // submit reload button function
-function reloadPage() {
-  window.location.reload();
+function submit() {
+  const displayScore = document.querySelector(".sectionlast");
+  displayScore.style.display = "flex";
+  if (scoreDisplay) {
+    scoreDisplay.innerText = "Score: " + localStorage.getItem("score");
+  }
 }
 // function to control details open and close
 function detailsSection() {
@@ -412,3 +400,30 @@ window.addEventListener("load", function () {
 // setTimeout(() => {
 //   pageloader();
 // }, 3000);
+
+// / const checboxChecker = document.querySelector(".checker");
+// const statusss = document.querySelector(".stater");
+
+// checboxChecker.addEventListener("change", function () {
+//   if(this.checked){
+//     console.log('yes',  this.value);
+
+//   }
+//   // if (checboxChecker.checked) {
+//   //   document.querySelector(".stater").style.display = "block";
+//   //   let storage = localStorage.setItem("Checkboxstorage", "storage");
+//   //   if (checboxChecker.checked) {
+//   //     storage++;
+//   //   } else {
+//   //     console.log("Error");
+//   //   }
+//   //   console.log("Checkbox is checked and value stored");
+//   //   let stiredisplay = localStorage.getItem("Checkedboxstorage", "storage");
+//   //   console.log(stiredisplay);
+
+//   //   statusss.innerHTML = "Checkbox is checked";
+//   // } else {
+//   //   statusss.style.display = "none";
+//   // }
+//   console.log(statusss);
+// });
