@@ -100,47 +100,87 @@ const objectArry = [
 
 const englishQuestions = [
   {
-    question: "Which of the following is a correct sentence?",
+    question: "Which of the following is a grammatically correct sentence?",
     options: [
-      "She go to the hospital everyday.",
-      "She goes to the hospital every day.",
-      "She going to the hospital every day.",
-      "She gone to the hospital every day.",
+      "He don't like to read.",
+      "He doesn't likes to read.",
+      "He doesn't like to read.",
+      "He not like to read.",
     ],
-    answer: "She goes to the hospital every day.",
+    answer: "He doesn't like to read.",
   },
   {
-    question: "Choose the correct meaning of the word 'empathy':",
+    question: "Choose the correct sentence:",
     options: [
-      "Feeling sorry for someone",
-      "Understanding and sharing another person's feelings",
-      "Ignoring someone’s feelings",
-      "Explaining your emotions to others",
+      "They has finished their homework.",
+      "They have finished their homework.",
+      "They is finished their homework.",
+      "They are finished their homework.",
     ],
-    answer: "Understanding and sharing another person's feelings",
+    answer: "They have finished their homework.",
   },
   {
     question: "Which sentence is in the past tense?",
     options: [
-      "The nurse is checking the patient's blood pressure.",
-      "The nurse checks the patient's blood pressure.",
-      "The nurse checked the patient's blood pressure.",
-      "The nurse will check the patient's blood pressure.",
+      "I eat breakfast at 8 AM.",
+      "I am eating breakfast.",
+      "I ate breakfast at 8 AM.",
+      "I will eat breakfast at 8 AM.",
     ],
-    answer: "The nurse checked the patient's blood pressure.",
+    answer: "I ate breakfast at 8 AM.",
   },
   {
-    question: "What is the antonym of the word 'accurate'?",
-    options: ["Precise", "Correct", "Wrong", "Exact"],
-    answer: "Wrong",
+    question: "Choose the sentence with correct subject-verb agreement:",
+    options: [
+      "The dogs barks loudly.",
+      "The dog bark loudly.",
+      "The dog barks loudly.",
+      "The dogs barks loud.",
+    ],
+    answer: "The dog barks loudly.",
   },
   {
-    question:
-      "Which of the following is a question tag for: 'The nurse is on duty,'?",
-    options: ["isn't she?", "does she?", "wasn't she?", "didn't she?"],
-    answer: "isn't she?",
+    question: "Which of the following is the correct use of punctuation?",
+    options: [
+      "Let's eat grandma!",
+      "Lets eat, grandma!",
+      "Let's eat, grandma!",
+      "Lets, eat grandma!",
+    ],
+    answer: "Let's eat, grandma!",
+  },
+  {
+    question: "What is the synonym of the word 'happy'?",
+    options: ["Angry", "Joyful", "Tired", "Sad"],
+    answer: "Joyful",
+  },
+  {
+    question: "What is the antonym of the word 'honest'?",
+    options: ["Truthful", "Sincere", "Dishonest", "Kind"],
+    answer: "Dishonest",
+  },
+  {
+    question: "Choose the correct form of the verb: 'She _____ a book now.'",
+    options: ["read", "reads", "is reading", "has read"],
+    answer: "is reading",
+  },
+  {
+    question: "Which sentence is in the future tense?",
+    options: [
+      "He will travel tomorrow.",
+      "He travels now.",
+      "He is travelling.",
+      "He traveled yesterday.",
+    ],
+    answer: "He will travel tomorrow.",
+  },
+  {
+    question: "Which word is a **conjunction**?",
+    options: ["Because", "Running", "Quickly", "Happiness"],
+    answer: "Because",
   },
 ];
+
 
 const foundationOfNursingQuestions = [
   {
@@ -221,10 +261,10 @@ const container = document.querySelector(".quizContainer");
 englishQuestions.forEach((q, index) => {
   htmlOutputEnglish += `<p>Q${index + 1}: ${q.question}</p>`;
   htmlOutputEnglish += "<ul>";
-  q.options.forEach((op) => {
+  q.options.forEach((opp) => {
     htmlOutputEnglish += `<li style="list-style-type: none">
     <label>
-    <input class="checker" type="checkbox" value="${op} "> ${op} 
+    <input class="checker" type="checkbox" value="${opp} "> ${opp} 
      </label>
       <p class="staterv" style="display:none"></p>
       </li>`;
@@ -247,8 +287,22 @@ document.querySelectorAll(".checker").forEach((checkbox) => {
     if (this.checked) {
       statP.innerHTML = "✅ You selected: " + this.value;
       statP.style.display = "block";
-      if (this.value === englishQuestions[0].answer) {
+      if (
+        this.value.trim() === englishQuestions[0].answer.trim() ||
+        this.value.trim() === englishQuestions[1].answer.trim() ||
+        this.value.trim() === englishQuestions[2].answer.trim() ||
+        this.value.trim() === englishQuestions[3].answer.trim() ||
+        this.value.trim() === englishQuestions[4].answer.trim() ||
+        this.value.trim() === englishQuestions[5].answer.trim() ||
+        this.value.trim() === englishQuestions[6].answer.trim() ||
+        this.value.trim() === englishQuestions[7].answer.trim() ||
+        this.value.trim() === englishQuestions[8].answer.trim() ||
+        this.value.trim() === englishQuestions[9].answer.trim() ||
+        this.value.trim() === englishQuestions[10].answer.trim()
+      ) {
         alert("You got it very correct ✅✅✅");
+      } else {
+        alert("hi");
       }
       // alert(statP.innerHTML);
     } else {
