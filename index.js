@@ -271,7 +271,7 @@ englishQuestions.forEach((q, index) => {
   htmlOutputEnglish += "</ul>";
 });
 htmlOutputEnglish += `<button style="background-Color:#7fb0f1; color:white; border:none "   onClick="closeSection()">Back</button>`;
-htmlOutputEnglish += `<button  style=" background-color:#7fb0f1; float:right; color:white; border:none   " onClick="submit()">Submit</button>`;
+htmlOutputEnglish += `<button  class='hidesubmit' style=" background-color:#7fb0f1; float:right; color:white; border:none   " onClick="submit()">Submit</button>`;
 container.innerHTML = htmlOutputEnglish;
 
 document.querySelectorAll(".checker").forEach((checkbox) => {
@@ -323,11 +323,33 @@ document.querySelectorAll(".checker").forEach((checkbox) => {
 
 // submit reload button function
 function submit() {
-  const displayScore = document.querySelector(".sectionlast");
-  displayScore.style.display = "flex";
-  if (scoreDisplay) {
-    scoreDisplay.innerText = "Score: " + localStorage.getItem("score");
+  let ff = (document.getElementById("detailsSection").open = false);
+  if (ff === false) {
+    let listener = document.querySelector(".quizContainer");
+    listener.style.display = "none";
+  } else {
+    let listener = document.querySelector(".quizContainer");
+    listener.style.display = "block";
   }
+
+  function hideAll() {
+    const displayScore = document.querySelector(".gettingscoretext2");
+    const hidingGettingScore = document.querySelector(".sectionlast");
+    if (hidingGettingScore) {
+      hidingGettingScore.style.display = "block";
+    } else {
+      alert("hello");
+    }
+    displayScore.style.display = "flex";
+    displayScore.style.background = "green";
+    if (displayScore) {
+      // displayScore.innerText = "Score: " + localStorage.getItem("score");
+    }
+  }
+  hideAll();
+  setTimeout(() => {
+    hideAll();
+  }, 1000);
 }
 // function to control details open and close
 function detailsSection() {
