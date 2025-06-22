@@ -202,7 +202,7 @@ button {
   margin-top: 100px;
 }
 .orbit {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   width: 210px;

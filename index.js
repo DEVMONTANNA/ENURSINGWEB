@@ -334,16 +334,18 @@ function submit() {
 
   function hideAll() {
     const displayScore = document.querySelector(".gettingscoretext2");
+    const displayScor = document.querySelector(".gettingscoretext");
     const hidingGettingScore = document.querySelector(".sectionlast");
-    if (hidingGettingScore) {
-      hidingGettingScore.style.display = "block";
-    } else {
-      alert("hello");
-    }
-    displayScore.style.display = "flex";
-    displayScore.style.background = "green";
+    const orbitRemoval = document.querySelector(".orbit");
+    setTimeout(() => {
+      orbitRemoval.style.display = "none";
+      displayScor.style.display = "none";
+    }, 3000);
+    hidingGettingScore.style.display = "block";
+    hidingGettingScore.style.background = "green";
+    displayScore.style.display = "block";
     if (displayScore) {
-      // displayScore.innerText = "Score: " + localStorage.getItem("score");
+      displayScore.innerText = "Score: " + localStorage.getItem("score");
     }
   }
   hideAll();
