@@ -7,136 +7,144 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <section class="loadersection">
-      <div class="loaderarea">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div class="loadertext">Loading....</div>
-    </section>
-
-    <section class="displaythings">
-      <div class="header">
-        <h1 class="headertext">E-NURSING WEB-APP</h1>
-        <p id="score-display"></p>
-      </div>
-
-      <div class="subjectheader">
-        <div><p class="subjecttext">Subject</p></div>
-        <div><p class="subjecttext">Course C</p></div>
-      </div>
-
-      <div class="coursedisplays">
-        <div class="subjects">
-          <details class="details" id="detailsSection">
-            <summary class="subjectNames">NUR 101</summary>
-            <div class="subjectContentDisplayer">
-              <p class="subjectNames">English</p>
-              <p class="subjectNames">101</p>
-            </div>
-            <div class="tryTestButton">
-              <button onclick="closeSection()" class="canceltaketest">
-                Cancel
-              </button>
-              <button onclick="takeTestCall() " class="taketest">
-                Take Test
-              </button>
-            </div>
-          </details>
+    <div>
+      <section class="loadersection">
+        <div class="loaderarea">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="subjects">
-          <details class="details" id="detailsSectionn">
-            <summary class="subjectNames">NUR 102</summary>
-            <div class="subjectContentDisplayer">
-              <p class="subjectNames">Foundation of Nursing</p>
-              <p class="subjectNames">102</p>
-            </div>
-            <div class="tryTestButton">
-              <button onclick="closeSection2()" class="canceltaketest">
-                Cancel
-              </button>
-              <button onclick="takeTestCall2()" class="taketest">
-                Take Test
-              </button>
-            </div>
-          </details>
-        </div>
-        <div class="subjects">
-          <details class="details">
-            <summary class="subjectNames">NUR 103</summary>
-            <div class="subjectContentDisplayer">
-              <p class="subjectNames">Pharmacology</p>
-              <p class="subjectNames">103</p>
-            </div>
-            <div class="tryTestButton">
-              <button onclick="closeSection()" class="canceltaketest">
-                Cancel</button
-              ><button onclick="takeTestCall() " class="taketest">
-                Take Test
-              </button>
-            </div>
-          </details>
-        </div>
-        <div class="subjects">
-          <details class="details">
-            <summary class="subjectNames">NUR 104</summary>
-            <div class="subjectContentDisplayer">
-              <p class="subjectNames">Med/Surgery</p>
-              <p class="subjectNames">104</p>
-            </div>
-            <div class="tryTestButton">
-              <button onclick="closeSection()" class="canceltaketest">
-                Cancel
-              </button>
-              <button onclick="takeTestCall() " class="taketest">
-                Take Test
-              </button>
-            </div>
-          </details>
-        </div>
-        <div class="subjects">
-          <details class="details">
-            <summary class="subjectNames">NUR 101</summary>
-            <div class="subjectContentDisplayer">
-              <p class="subjectNames">English</p>
-              <p class="subjectNames">101</p>
-            </div>
-            <div class="tryTestButton">
-              <button onclick="closeSection()" class="canceltaketest">
-                Cancel
-              </button>
-              <button onclick="takeTestCall() " class="taketest">
-                Take Test
-              </button>
-            </div>
-          </details>
-        </div>
-        <div class="subjects">
-          <p class="subjectNames">English</p>
-          <p class="subjectNames">101</p>
-        </div>
-      </div>
+        <div class="loadertext">Loading....</div>
+      </section>
 
-      <div class="quizContainer" id="English"></div>
+      <section class="displaythings">
+        <div class="header">
+          <h1 class="headertext">E-NURSING WEB-APP</h1>
+          <p id="score-display"></p>
+        </div>
 
-      <!-- <button onclick="nnn()">click</button>  -->
-      <!-- <button class="pres" onclick="precious()">Click to call user</button> -->
+        <div class="subjectheader">
+          <div><p class="subjecttext">Subject</p></div>
+          <div><p class="subjecttext">Course C</p></div>
+        </div>
 
-      <div class="FoundationOfNursingContainerr" id="foundationOfNursing"></div>
-    </section>
+        <div class="coursedisplays">
+          <div class="subjects">
+            <details class="details" id="detailsSection">
+              <summary class="subjectNames">NUR 101</summary>
+              <div class="subjectContentDisplayer">
+                <p class="subjectNames">English</p>
+                <p class="subjectNames">101</p>
+              </div>
+              <div class="tryTestButton">
+                <button onclick="closeSection()" class="canceltaketest">
+                  Cancel
+                </button>
+                <button onclick="takeTestCall() " class="taketest">
+                  Take Test
+                </button>
+              </div>
+            </details>
+          </div>
+          <div class="subjects">
+            <details class="details" id="detailsSectionn">
+              <summary class="subjectNames">NUR 102</summary>
+              <div class="subjectContentDisplayer">
+                <p class="subjectNames">Foundation of Nursing</p>
+                <p class="subjectNames">102</p>
+              </div>
+              <div class="tryTestButton">
+                <button onclick="closeSection2()" class="canceltaketest">
+                  Cancel
+                </button>
+                <button onclick="takeTestCall2()" class="taketest">
+                  Take Test
+                </button>
+              </div>
+            </details>
+          </div>
+          <div class="subjects">
+            <details class="details">
+              <summary class="subjectNames">NUR 103</summary>
+              <div class="subjectContentDisplayer">
+                <p class="subjectNames">Pharmacology</p>
+                <p class="subjectNames">103</p>
+              </div>
+              <div class="tryTestButton">
+                <button onclick="closeSection()" class="canceltaketest">
+                  Cancel</button
+                ><button onclick="takeTestCall() " class="taketest">
+                  Take Test
+                </button>
+              </div>
+            </details>
+          </div>
+          <div class="subjects">
+            <details class="details">
+              <summary class="subjectNames">NUR 104</summary>
+              <div class="subjectContentDisplayer">
+                <p class="subjectNames">Med/Surgery</p>
+                <p class="subjectNames">104</p>
+              </div>
+              <div class="tryTestButton">
+                <button onclick="closeSection()" class="canceltaketest">
+                  Cancel
+                </button>
+                <button onclick="takeTestCall() " class="taketest">
+                  Take Test
+                </button>
+              </div>
+            </details>
+          </div>
+          <div class="subjects">
+            <details class="details">
+              <summary class="subjectNames">NUR 101</summary>
+              <div class="subjectContentDisplayer">
+                <p class="subjectNames">English</p>
+                <p class="subjectNames">101</p>
+              </div>
+              <div class="tryTestButton">
+                <button onclick="closeSection()" class="canceltaketest">
+                  Cancel
+                </button>
+                <button onclick="takeTestCall() " class="taketest">
+                  Take Test
+                </button>
+              </div>
+            </details>
+          </div>
+          <div class="subjects">
+            <p class="subjectNames">English</p>
+            <p class="subjectNames">101</p>
+          </div>
+        </div>
+
+        <div class="quizContainer" id="English"></div>
+
+        <!-- <button onclick="nnn()">click</button>  -->
+        <!-- <button class="pres" onclick="precious()">Click to call user</button> -->
+
+        <div
+          class="FoundationOfNursingContainerr"
+          id="foundationOfNursing"
+        ></div>
+      </section>
+    </div>
 
     <section style="height: 100vh" class="sectionlast">
       <div>
         <div class="loaderScoreDisplayer">
-          <div>
-            <div class="orbit"><div class="circlediv"></div></div>
-            <h1 class="gettingscoretext">Getting score</h1>
-            <h1 class="gettingscoretext2"></h1>
+          <div class="contents">
+            <div>
+              <div class="orbit"><div class="circlediv"></div></div>
+              <h1 class="gettingscoretext">Getting score</h1>
+              <h1 class="gettingscoretext2"></h1>
+              <div class="playagaindiv"><button onclick="playAgain()" class="playagainbutton">Play Again</button></div>
+            </div>
           </div>
         </div>
       </div>

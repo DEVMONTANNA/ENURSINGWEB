@@ -337,13 +337,20 @@ function submit() {
     const displayScor = document.querySelector(".gettingscoretext");
     const hidingGettingScore = document.querySelector(".sectionlast");
     const orbitRemoval = document.querySelector(".orbit");
+    const genral = document.querySelector(".coursedisplays");
+    genral.style.display = "none";
+    hidingGettingScore.style.background = "white";
+
     setTimeout(() => {
       orbitRemoval.style.display = "none";
       displayScor.style.display = "none";
     }, 3000);
+    const playAgainDiv = document.querySelector(".playagaindiv");
+    playAgainDiv.style.display = "block";
     hidingGettingScore.style.display = "block";
-    hidingGettingScore.style.background = "green";
+    // hidingGettingScore.style.background = "green";
     displayScore.style.display = "block";
+    // displayScore.style.background = "green";
     if (displayScore) {
       displayScore.innerText = "Score: " + localStorage.getItem("score");
     }
@@ -353,6 +360,11 @@ function submit() {
     hideAll();
   }, 1000);
 }
+
+function playAgain() {
+  location.reload();
+}
+
 // function to control details open and close
 function detailsSection() {
   document.getElementById("detailsSection").open = true;
